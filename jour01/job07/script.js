@@ -19,20 +19,21 @@ function jourtravaille(date) {
     var mois = date.getMonth() + 1;      
     var annee = date.getFullYear();      
 
-    var dateStr = annee + "-" + mois + "-" + jour;
+    var dateStr = `${annee}-${mois}-${jour}`;
 
     // Vérification si la date est dans le tableau joursFeries2020
     if (joursFeries2020.indexOf(dateStr) !== -1) {
-        console.log("Le " + jour + " " + mois + " " + annee + " est un jour férié");
+        console.log(`Le ${jour} ${mois} ${annee} est un jour férié`);
     } 
     // Vérification si le jour est dimanche ou samedi
     else if (date.getDay() === 0 || date.getDay() === 6) {
-        console.log("Non, " + jour + " " + mois + " " + annee + " est un week-end");
+        console.log(`Non, ${jour} ${mois} ${annee} est un week-end`);
     } 
     else {
-        console.log("Oui, " + jour + " " + mois + " " + annee + " est un jour travaillé");
+        console.log(`Oui, ${jour} ${mois} ${annee} est un jour travaillé`);
     }
 }
+
 
 // Exemple d'appels à la fonction
 jourtravaille(new Date("2020-5-1")); // Jour férié
