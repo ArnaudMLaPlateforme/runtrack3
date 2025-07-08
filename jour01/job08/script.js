@@ -24,6 +24,7 @@ function sommeNombresPremiers (a, b){
     }
 }
 
+// Tests
 console.log(sommeNombresPremiers(3, 5));  // 8 (3 et 5 sont premiers)
 console.log(sommeNombresPremiers(4, 5));  // false (4 n'est pas premier)
 console.log(sommeNombresPremiers(11, 7)); // 18 (11 et 7 sont premiers)
