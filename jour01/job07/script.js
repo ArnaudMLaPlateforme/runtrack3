@@ -1,6 +1,6 @@
 function jourtravaille(date) {
     // Tableau des jours fériés en 2020 (format "YYYY-M-D")
-    var joursFeries2020 = [
+    const joursFeries2020 = [
         "2020-1-1",
         "2020-4-13",
         "2020-5-1",
@@ -15,11 +15,11 @@ function jourtravaille(date) {
     ];
 
     // Récupération du jour, du mois et de l'année de la date passée en paramètre
-    var jour = date.getDate();           
-    var mois = date.getMonth() + 1;      
-    var annee = date.getFullYear();      
+    const jour = date.getDate();           
+    const mois = date.getMonth() + 1;      
+    const annee = date.getFullYear();      
 
-    var dateStr = `${annee}-${mois}-${jour}`;
+    const dateStr = `${annee}-${mois}-${jour}`;
 
     // Vérification si la date est dans le tableau joursFeries2020
     if (joursFeries2020.indexOf(dateStr) !== -1) {
