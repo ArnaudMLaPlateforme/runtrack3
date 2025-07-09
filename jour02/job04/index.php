@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <textarea name="" id="keylogger"></textarea>
     <script src="script.js"></script>
 </body>
 </html>
