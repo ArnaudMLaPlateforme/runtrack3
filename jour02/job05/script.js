@@ -6,8 +6,8 @@ window.addEventListener("scroll", () => {
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrollPercent = Math.min(scrollTop / docHeight, 1);
 
-  // Convertir ce % en couleur (exemple du rouge vers vert)
-  // Ici on fait varier la couleur du rouge (255,0,0) vers vert (0,255,0)
+  // Convertir le % en couleur (du rouge vers vert)
+  // Variation de la couleur du rouge (255,0,0) vers vert (0,255,0)
   const red = Math.floor(255 * (1 - scrollPercent));
   const green = Math.floor(255 * scrollPercent);
 
