@@ -1,5 +1,5 @@
 function citation() {
-    const content = document.getElementById("citation").textContent;
+    const content = document.getElementById("citation").textContent; // Récupération du contenu de l'id "citation"
     console.log(content);
 }
 
