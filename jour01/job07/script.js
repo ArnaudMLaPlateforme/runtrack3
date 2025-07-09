@@ -22,7 +22,7 @@ function jourtravaille(date) {
     const dateStr = `${annee}-${mois}-${jour}`;
 
     // Vérification si la date est dans le tableau joursFeries2020
-    if (joursFeries2020.indexOf(dateStr) !== -1) {
+    if (joursFeries2020.includes(dateStr)) {
         console.log(`Le ${jour} ${mois} ${annee} est un jour férié`);
     } 
     // Vérification si le jour est dimanche ou samedi
