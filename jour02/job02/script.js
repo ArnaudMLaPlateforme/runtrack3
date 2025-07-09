@@ -2,7 +2,7 @@
 function showhide(){ 
     // Récupération de l'élément ayant l'ID "citation" (s'il existe déjà dans le DOM)
     const article = document.getElementById("citation"); 
-
+    
     // Est-ce que article existe ?
     if (article) { 
         // Si oui, suppression de article du DOM

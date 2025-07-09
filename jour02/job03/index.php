@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button id="button">Cliquez</button>
+    <p id="compteur">0</p>
     <script src="script.js"></script>
 </body>
 </html>
