@@ -19,6 +19,7 @@ function jourtravaille(date) {
     const mois = date.getMonth() + 1;      
     const annee = date.getFullYear();      
 
+    // Construction d'une chaîne qui représente la date passée en paramètre au format "YYYY-MM-DD"
     const dateStr = `${annee}-${mois}-${jour}`;
 
     // Vérification si la date est dans le tableau joursFeries2020
