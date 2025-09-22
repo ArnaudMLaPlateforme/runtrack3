@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+    <style>
+        .error { color: red; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>Inscription</h1>
+    <form id="form-inscription">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom">
+        <div class="error" id="nom-error"></div>
+
+        <label for="prenom">Prenom :</label>
+        <input type="text" id="prenom" name="prenom">
+        <div class="error" id="prenom-error"></div>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email">
+        <div class="error" id="email-error"></div>
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password">
+        <div class="error" id="password-error"></div>
+
+        <label for="adresse">Adresse :</label>
+        <input type="text" id="adresse" name="adresse">
+        <div class="error" id="adresse-error"></div>
+
+        <label for="codepostal">Code postal :</label>
+        <input type="text" id="codepostal" name="codepostal">
+        <div class="error" id="codepostal-error"></div>
+
+        <button type="submit">Valider</button>
+    </form>
+
+    <script src="inscription.js"></script>
+</body>
+</html>

@@ -1,6 +1,4 @@
-function jourtravaille(date) {
-    // Tableau des jours fériés en 2020 (format "YYYY-M-D")
-    const joursFeries2020 = [
+const joursFeries2020 = [
         "2020-1-1",
         "2020-4-13",
         "2020-5-1",
@@ -14,6 +12,10 @@ function jourtravaille(date) {
         "2020-12-25"
     ];
 
+
+function jourtravaille(date) {
+    // Tableau des jours fériés en 2020 (format "YYYY-M-D")
+    
     // Récupération du jour, du mois et de l'année de la date passée en paramètre
     const jour = date.getDate();           
     const mois = date.getMonth() + 1;      
