@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job 02</title>
+    <!-- CDN TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!-- Header avec navigation -->
+    <header>
+        <nav class="bg-blue-600 shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <a href="index.html" class="text-white font-bold text-xl">MonSite</a>
+                    <!-- Navigation -->
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="text-white hover:text-yellow-300 transition">Accueil</a></li>
+                        <li><a href="index.html" class="text-white hover:text-yellow-300 transition">Inscription</a>
+                        </li>
+                        <li><a href="index.html" class="text-white hover:text-yellow-300 transition">Connexion</a></li>
+                        <li><a href="index.html" class="text-white hover:text-yellow-300 transition">Rechercher</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section principale avec formulaire de création de compte -->
+    <main>
+        <h1>Créer un compte</h1>
+        <form action="#" method="post">
+            <!-- Civilité -->
+            <div>
+                <label><input type="radio" name="civilite" value="monsieur"> Monsieur</label>
+                <label><input type="radio" name="civilite" value="madame"> Madame</label>
+                <label><input type="radio" name="civilite" value="autre"> Autre</label>
+            </div>
+
+            <!-- Prénom, Nom, Adresse -->
+            <div>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+
+            <div>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+
+            <div>
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Mot de passe et validation -->
+            <div>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div>
+                <label for="password_confirm">Confirmer le mot de passe</label>
+                <input type="password" id="password_confirm" name="password_confirm" required>
+            </div>
+
+            <!-- Passions -->
+            <div>
+                <label><input type="checkbox" name="passions" value="informatique"> Informatique</label>
+                <label><input type="checkbox" name="passions" value="voyages"> Voyages</label>
+                <label><input type="checkbox" name="passions" value="sport"> Sport</label>
+                <label><input type="checkbox" name="passions" value="lecture"> Lecture</label>
+            </div>
+
+            <!-- Bouton de validation -->
+            <div>
+                <button type="submit">Créer mon compte</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer avec navigation -->
+    <footer class="bg-blue-600 mt-10">
+    <div class="max-w-7xl mx-auto py-6 px-4 text-center text-white">
+      <ul class="flex justify-center space-x-6 mb-4">
+        <li><a href="index.html" class="hover:text-yellow-300 transition">Accueil</a></li>
+        <li><a href="index.html" class="hover:text-yellow-300 transition">Inscription</a></li>
+        <li><a href="index.html" class="hover:text-yellow-300 transition">Connexion</a></li>
+        <li><a href="index.html" class="hover:text-yellow-300 transition">Rechercher</a></li>
+      </ul>
+      <p class="text-sm">&copy; 2025 MonSite. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

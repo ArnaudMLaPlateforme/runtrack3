@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Park Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- CDN TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Heroicons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- HERO -->
+    <section class="relative h-screen flex flex-col">
+        <!-- Background -->
+        <div class="absolute inset-0">
+            <img src="images/hero-bg.avif" alt="Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div> <!-- Overlay -->
+        </div>
+
+        <!-- NAVBAR -->
+        <header class="relative z-10">
+            <nav class="flex items-center justify-between px-12 py-8">
+
+                <!-- Left: Logo + Links -->
+                <div class="flex items-center space-x-8">
+                    <a href="#" class="text-xl font-bold uppercase text-white">National Park</a>
+                    <div class="hidden lg:flex space-x-6">
+                        <a href="#"
+                            class="text-sm text-white hover:text-gray-300 font-['Montserrat'] uppercase">About</a>
+                        <a href="#" class="text-sm text-white hover:text-gray-300 font-['Montserrat'] uppercase">Our
+                            works</a>
+                        <a href="#"
+                            class="text-sm text-white hover:text-gray-300 font-['Montserrat'] uppercase">Stories</a>
+                        <a href="#"
+                            class="text-sm text-white hover:text-gray-300 font-['Montserrat'] uppercase">Support</a>
+                    </div>
+                </div>
+
+                <!-- Right: Search + Donate -->
+                <div class="hidden lg:flex flex items-center space-x-4">
+                    <a href="#"
+                        class="font-thin text-sm text-white hover:text-gray-300 font-['Montserrat'] uppercase">partnerships</a>
+                    <a href="#"
+                        class="font-extralight text-sm text-white hover:text-gray-300 font-['Montserrat'] uppercase">news</a>
+                    <!-- Loupe (Heroicons) -->
+                    <button class="p-2 hover:text-gray-300 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+                        </svg>
+                    </button>
+
+                    <!-- Donate button -->
+                    <a href="#" class="text-sm bg-sky-900 hover:bg-sky-800 text-white px-12 py-3 shadow uppercase
+                    font-['Montserrat']">
+                        Donate
+                    </a>
+                </div>
+
+                <!-- Mobile Burger -->
+                <div class="lg:hidden flex items-center">
+                    <button id="burger-btn" class="text-white focus:outline-none">
+                        <svg id="burger-icon" class="w-6 h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu"
+            class="fixed top-0 right-0 h-full w-full bg-black/50 backdrop-blur-md transform translate-x-full transition-transform duration-300 z-50 md:hidden">
+            <div class="flex flex-col h-full px-8 py-8">
+                <!-- Close button -->
+                <button id="close-btn" class="self-end mb-8 text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Links -->
+                <a href="#" class="block text-white py-3 uppercase text-lg">About</a>
+                <a href="#" class="block text-white py-3 uppercase text-lg">Our works</a>
+                <a href="#" class="block text-white py-3 uppercase text-lg">Stories</a>
+                <a href="#" class="block text-white py-3 uppercase text-lg">Support</a>
+                <a href="#"
+                    class="mt-6 bg-sky-900 hover:bg-sky-800 text-white px-6 py-3 shadow uppercase text-center">Donate</a>
+            </div>
+        </div>
+
+
+        <!-- HERO CONTENT -->
+        <div class="relative z-10 flex-grow flex items-end px-16 pb-16">
+            <div class="flex flex-col md:flex-row w-full gap-6">
+                <!-- Left: Title -->
+                <div class="md:flex-1">
+                    <h1 class="text-white text-xl md:text-5xl font-light tracking-widest md:mb-10">
+                        <span class="block mb-3">Together, We Make</span>
+                        <span class="block">Parks Possible</span>
+                    </h1>
+                    <p class="mt-4 text-xs md:text-md text-gray-200 font-light tracking-widest leading-loose md:pr-16">
+                        It takes all of us to help sustain the vast landscapes and history of our national parks.
+                        The National Park Foundation helps guide charitable giving to the greatest needs within
+                        the national park service. See how your gift can help make the parks possible.
+                    </p>
+                </div>
+
+                <!-- Right: CTA -->
+                <div class="md:flex-none flex flex-col justify-end">
+                    <a href="#"
+                        class="bg-transparent border border-white hover:bg-white hover:text-black text-white px-6 py-3 text-sm md:text-lg shadow uppercase font-['Montserrat'] mt-auto">
+                        Support our parks
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- MAIN SECTION -->
+    <main>
+        <!-- Banner -->
+        <section class="relative h-screen pt-24">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="images/banner.avif" alt="Banner" class="w-full h-full object-cover">
+
+                <!-- Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-b from-white/80 to-transparent"></div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="relative z-10 max-w-2xl mx-auto text-center px-6">
+                <h2 class="text-xl md:text-4xl font-light text-black mb-8 tracking-wider md:leading-relaxed">
+                    Turning Passion for Our Parks into Action
+                </h2>
+                <p class="text-sm md:text-base text-black font-light tracking-widest md:leading-relaxed">
+                    Thanks to the generosity of our donors, NPF has accomplished a lot of good in the parks. However,
+                    there’s still work to be done.
+                </p>
+            </div>
+        </section>
+
+        <!-- Carousel Section -->
+        <section class="pt-16 md:pt-32 px-9 pb-24">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-sm font-medium md:text-xl uppercase font-['Montserrat'] max-w-5xl mb-8">
+                    Find your place in the parks. Explore our programs and partnerships across the National Park System
+                    and see how you can give to the areas you’re most passionate about.
+                </h2>
+
+                <!-- Carousel -->
+                <div class="relative">
+                    <div id="carousel" class=" mb-12 overflow-hidden">
+                        <div class="flex transition-transform duration-300 ease-in-out">
+                            <!-- Card 1 -->
+                            <div
+                                class="flex-none w-80 h-96 relative overflow-hidden transform transition-transform ease-in-out hover:scale-110 hover:z-10">
+                                <img src="https://npf-prod.imgix.net/uploads/ook_dawn-kish-photo_cresent-lake_olympic-np_dak2423.jpg?auto=compress,format&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1290&q=80&w=774"
+                                    alt="Youth Engagement & Education" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div
+                                    class="absolute bottom-12 left-0 right-0 text-white text-center font-extralight text-lg tracking-wider px-12">
+                                    Youth Engagement & Education
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div
+                                class="flex-none w-80 h-96 relative overflow-hidden transform transition-transform ease-in-out hover:scale-110 hover:z-10">
+                                <img src="https://npf-prod.imgix.net/uploads/4881f968152444fca67aae27016568e7.jpg?auto=compress,format&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1290&q=80&w=774"
+                                    alt="History & Culture" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div
+                                    class="absolute bottom-12 left-0 right-0 text-white text-center font-extralight text-lg tracking-wider px-12">
+                                    History & Culture
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div
+                                class="flex-none w-80 h-96 relative overflow-hidden transform transition-transform ease-in-out hover:scale-110 hover:z-10">
+                                <img src="https://npf-prod.imgix.net/uploads/dad4f1b72a634f5fb395ae2b00f9f147.jpg?auto=compress,format&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1290&q=80&w=774"
+                                    alt="Communities & Workforce" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div
+                                    class="absolute bottom-12 left-0 right-0 text-white text-center font-extralight text-lg tracking-wider px-12">
+                                    Communities & Workforce
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div
+                                class="flex-none w-80 h-96 relative overflow-hidden transform transition-transform ease-in-out hover:scale-110 hover:z-10">
+                                <img src="https://npf-prod.imgix.net/uploads/c4dc32bb891442b28b29ae0c0102d899.jpg?auto=compress,format&crop=focalpoint&fit=crop&fp-x=0.5044&fp-y=0.7508&h=1290&q=80&w=774"
+                                    alt="Resilience & Sustainability" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div
+                                    class="absolute bottom-12 left-0 right-0 text-white text-center font-extralight text-lg tracking-wider px-12">
+                                    Resilience & Sustainability
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div
+                                class="flex-none w-80 h-96 relative overflow-hidden transform transition-transform ease-in-out hover:scale-110 hover:z-10">
+                                <img src="https://npf-prod.imgix.net/uploads/b1f8f1dff8b845ca9c17ad7c003c1f59.jpg?auto=compress,format&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1290&q=80&w=774"
+                                    alt="Parks of the Future" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div
+                                    class="absolute bottom-12 left-0 right-0 text-white text-center font-extralight text-lg tracking-wider px-12">
+                                    Parks of the Future
+                                </div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div
+                                class="flex-none w-80 h-96 relative overflow-hidden transform transition-transform ease-in-out hover:scale-110 hover:z-10">
+                                <img src="https://npf-prod.imgix.net/uploads/Manatees_Underwater_WekivaWSR_SavetheManateesClub.png?auto=compress,format&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1290&q=80&w=774"
+                                    alt="Landscape & Wildlife Conservation" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div
+                                    class="absolute bottom-12 left-0 right-0 text-white text-center font-extralight text-lg tracking-wider px-12">
+                                    Landscape & Wildlife Conservation
+                                </div>
+                            </div>
+
+                            <!-- Card 7 -->
+                            <div
+                                class="flex-none w-80 h-96 relative overflow-hidden transform transition-transform ease-in-out hover:scale-110 hover:z-10">
+                                <img src="https://npf-prod.imgix.net/uploads/3b4a9c2ca5aa440bb530affd00e0a345.jpg?auto=compress,format&crop=focalpoint&fit=crop&fp-x=0.3445&fp-y=0.3685&h=1290&q=80&w=774"
+                                    alt="Outdoor Exploration" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div
+                                    class="absolute bottom-12 left-0 right-0 text-white text-center font-extralight text-lg tracking-wider px-12">
+                                    Outdoor Exploration
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Arrows under the carousel -->
+                    <div class="flex space-x-2">
+                        <button id="prev"
+                            class="w-10 h-10 md:w-16 md:h-16 bg-gray-600 text-white flex items-center justify-center shadow hover:bg-sky-700">
+                            <!-- Flèche gauche SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        <button id="next"
+                            class="w-10 h-10 md:w-16 md:h-16 bg-gray-600 text-white flex items-center justify-center shadow hover:bg-sky-700">
+                            <!-- Flèche droite SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="py-24 px-6 bg-white">
+            <div class="max-w-6xl mx-auto text-center mb-12">
+                <div class="flex items-center justify-center">
+                    <div class="flex-grow h-px bg-gray-300"></div>
+                    <h2 class="mx-6 text-md md:text-lg tracking-tight uppercase font-['Montserrat']">
+                        Our work
+                    </h2>
+                    <div class="flex-grow h-px bg-gray-300"></div>
+                </div>
+            </div>
+            <div class="grid gap-16 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+                <!-- Card 1 -->
+                <div class="flex flex-col">
+                    <img src="https://npf-prod.imgix.net/uploads/APIS_LLBean_July2024_ARB01768.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=704&q=80&w=1056"
+                        alt="Blog post 1" class="w-full h-56 object-cover mb-6">
+                    <h3 class="mt-4 text-xl font-light text-gray-800 mb-2 tracking-widest">
+                        Making the Isolated, Accessible
+                    </h3>
+                    <p class="mt-2 text-gray-600 text-sm leading-relaxed tracking-widest">
+                        Discover breathtaking landscapes and hidden gems across the country’s most iconic natural
+                        destinations.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flex flex-col">
+                    <img src="https://npf-prod.imgix.net/uploads/APIS_LLBean_July2024_ARB01768.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=704&q=80&w=1056"
+                        alt="Blog post 1" class="w-full h-56 object-cover mb-6">
+                    <h3 class="mt-4 text-xl font-light text-gray-800 mb-2 tracking-widest">
+                        Over 50 Years of Partnership
+                    </h3>
+                    <p class="mt-2 text-gray-600 text-sm leading-relaxed tracking-widest">
+                        Discover breathtaking landscapes and hidden gems across the country’s most iconic natural
+                        destinations.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flex flex-col">
+                    <img src="https://npf-prod.imgix.net/uploads/APIS_LLBean_July2024_ARB01768.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=704&q=80&w=1056"
+                        alt="Blog post 1" class="w-full h-56 object-cover mb-6">
+                    <h3 class="mt-4 text-xl font-light text-gray-800 mb-2 tracking-widest">
+                        In the Footsteps of Fishers
+                    </h3>
+                    <p class="mt-2 text-gray-600 text-sm leading-relaxed tracking-widest">
+                        Discover breathtaking landscapes and hidden gems across the country’s most iconic natural
+                        destinations.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section
+            class=" bg-[url(https://npf-prod.imgix.net/uploads/63d148c7c42145b2aba5ae46016fb32c.jpg?auto=compress%2Cformat&fit=max&q=80&w=1600)] bg-cover bg-top bg-no-repeat">
+            <div class="bg-sky-950/80 p-16 md:p-12 lg:px-16 lg:py-40">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-xl text-white md:text-4xl tracking-widest mb-12">Stay Up to Date on Our
+                        Work</h2>
+
+                    <p class="text-white tracking-widest font-extralight leading-loose mb-12 text-sm md:text-md">
+                        In between visits to your favorite parks, our newsletter is a great way to learn about our
+                        latest projects, programs and opportunities related to the national parks.
+                    </p>
+
+                    <div class="mt-4 sm:mt-8">
+                        <a href="#"
+                            class="inline-block bg-white px-6 py-3 md:px-12 md:py-5 text-sm md:text-md font-medium text-sky-900 transition hover:bg-transparent hover:text-white hover:border border border-white uppercase font-['Montserrat']">
+                            Get the npf newsletter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="py-16 md:py-32 px-6 bg-white">
+            <div class="max-w-6xl mx-auto text-center mb-12">
+                <div class="flex items-center justify-center">
+                    <div class="flex-grow h-px bg-gray-300"></div>
+                    <h2 class="mx-6 text-3xl md:text-lg uppercase font-['Montserrat']">
+                        National Park Foundation Partners
+                    </h2>
+                    <div class="flex-grow h-px bg-gray-300"></div>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-12 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
+                    <img src="https://npf-prod.imgix.net/uploads/npf-subaru-partner.png?auto=compress%2Cformat&fit=max&q=80&w=334"
+                        alt="Logo 1" class="h-20 object-contain">
+                    <img src="https://npf-prod.imgix.net/uploads/Untitled_design-removebg-preview.png?auto=compress%2Cformat&fit=max&q=80&w=334"
+                        alt="Logo 2" class="h-20 object-contain">
+                    <img src="https://npf-prod.imgix.net/uploads/NatureValley_logo.png?auto=compress%2Cformat&fit=max&q=80&w=334"
+                        alt="Logo 3" class="h-20 object-contain">
+                </div>
+
+                <p class="text-center text-gray-600 text-sm md:text-medium leading-loose max-w-2xl tracking-wider mt-6 md:mt-12">
+                    Our work in parks would not be possible without the generous and ongoing support of our corporate
+                    partners. This tradition of giving is crucial to preserving America's most special places.
+                </p>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100">
+        <!-- Footer Top -->
+        <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <div>
+                        <a href="#" class="text-xl font-bold uppercase">National Park</a>
+                    </div>
+
+                    <p class="mt-6 max-w-xs text-gray-500 text-xs tracking-wider leading-loose">
+                        National Park Foundation<br>
+                        1500 K Street NW, Suite 700<br>
+                        Washington, D.C. 20005
+                    </p>
+
+                    <p class="mt-6 max-w-xs text-gray-500 text-xs tracking-wider leading-loose">
+                        Phone: (202) 796-2500<br>
+                        Toll-Free: (888) 467-2757<br>
+                        Fax: (202) 796-2509
+                    </p>
+
+                    <p class="mt-6 max-w-xs text-gray-500 text-xs tracking-wider leading-loose">
+                        Donate by Mail<br>
+                        National Park Foundation<br>
+                        Attn: Gift Processing<br>
+                        P.O. Box 17394<br>
+                        Baltimore, MD 21298-9450
+                    </p>
+
+                    <ul class="mt-8 flex gap-6">
+                        <li>
+                            <a href="#" rel="noreferrer" target="_blank"
+                                class="text-gray-500 transition hover:opacity-75">
+                                <span class="sr-only">Facebook</span>
+
+                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" rel="noreferrer" target="_blank"
+                                class="text-gray-500 transition hover:opacity-75">
+                                <span class="sr-only">Instagram</span>
+
+                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" rel="noreferrer" target="_blank"
+                                class="text-gray-500 transition hover:opacity-75">
+                                <span class="sr-only">Twitter</span>
+
+                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" rel="noreferrer" target="_blank"
+                                class="text-gray-500 transition hover:opacity-75">
+                                <span class="sr-only">GitHub</span>
+
+                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column 2 -->
+                <div>
+                    <ul class="space-y-4 text-sm">
+                        <li>
+                            <a href="#"
+                                class="text-blue-950 transition hover:opacity-75 uppercase font-['Montserrat'] font-medium">Privacy
+                                Policy</a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-blue-950 transition hover:opacity-75 uppercase font-['Montserrat'] font-medium">Terms
+                                of Use</a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-blue-950 transition hover:opacity-75 uppercase font-['Montserrat'] font-medium">Grant
+                                Applications</a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-blue-950 transition hover:opacity-75 uppercase font-['Montserrat'] font-medium">Financial
+                                Reports</a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-blue-950 transition hover:opacity-75 uppercase font-['Montserrat'] font-medium">Careers</a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-blue-950 transition hover:opacity-75 uppercase font-['Montserrat'] font-medium">Contact
+                                NPF</a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-blue-950 transition hover:opacity-75 uppercase font-['Montserrat'] font-medium">Donate</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <!-- FORM -->
+                <div class="col-span-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <p class="font-light md:text-2xl tracking-widest mb-3">Stay Inspired</p>
+                            <p class="text-xs font-extralight tracking-widest">Connect with the parks you love. Sign up
+                                to receive the latest NPF news, information on how you can support our national
+                                treasures, and travel ideas for your next trip to the parks</p>
+                        </div>
+                        <div>
+                            <label for="first-name"
+                                class="block text-sm font-medium uppercase tracking-widest font-['Montserrat']">First
+                                name</label>
+                            <div class="mt-2">
+                                <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-sm border border-blue-900 px-3 py-4 text-base 
+                                    outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 
+                                    focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                                    placeholder="First Name" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="last-name"
+                                class="block text-sm font-medium uppercase tracking-widest font-['Montserrat']">Last
+                                name</label>
+                            <div class="mt-2">
+                                <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-sm border border-blue-900 px-3 py-4 text-base 
+                                    outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 
+                                    focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                                    placeholder="Last Name" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email"
+                                class="block text-sm font-medium uppercase tracking-widest font-['Montserrat']">Email</label>
+                            <div class="mt-2">
+                                <input id="first-name" type="email" name="first-name" autocomplete="given-name" class="block w-full rounded-sm border border-blue-900 px-3 py-4 text-base 
+                                    outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 
+                                    focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                                    placeholder="Email" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="state"
+                                class="block text-sm font-medium uppercase tracking-widest font-['Montserrat']">State</label>
+                            <div class="mt-2">
+                                <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-sm border border-blue-900 px-3 py-4 text-base 
+                                    outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 
+                                    focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                                    placeholder="State" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="mobile"
+                                class="block text-sm font-medium uppercase tracking-widest font-['Montserrat']">Mobile
+                                Number</label>
+                            <div class="mt-2">
+                                <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-sm border border-blue-900 px-3 py-4 text-base 
+                                    outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 
+                                    focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                                    placeholder="Mobile Number" />
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="comments" name="comments" type="checkbox"
+                                class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                            <label for="comments" class="ml-2 font-medium text-sm text-gray-700">
+                                I want to receive text messages from NPF
+                            </label>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <p class="text-xs text-gray-500 font-extralight tracking-widest">By entering your cell phone
+                                number, you agree to receive automated, recurring news and donation requests from the
+                                National Park Foundation from 33077. Reply STOP to cancel. Message and Data Rates May
+                                Apply.</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="text-sm bg-sky-900 hover:bg-sky-800 text-white px-12 py-3 shadow uppercase
+                    font-['Montserrat']">
+                                Sign up for the newsletter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div
+            class="mx-auto max-w-screen-xl pb-24 flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-t border-gray-300 pt-10 px-6">
+            <!-- Texte -->
+            <div class="text-left space-y-2">
+                <p class="text-xs text-gray-500">&copy; 2025 National Park Foundation</p>
+                <p class="text-xs text-gray-500">
+                    The National Park Foundation is a 501(c)3 non-profit organization. Tax
+                    identification number: 52-1086761.
+                </p>
+            </div>
+
+            <!-- Logos -->
+            <div class="flex flex-wrap items-center justify-start md:justify-end gap-4">
+                <img class="h-20 w-auto"
+                    src="https://npf-prod.imgix.net/uploads/ba-ribbon-logo.png?auto=compress%2Cformat&fit=max&h=160&q=80"
+                    alt="Best in America certified by Independent Charities of America" loading="lazy">
+
+                <img class="h-20 w-auto"
+                    src="https://npf-prod.imgix.net/uploads/candid-seal-platinum-2023.png?auto=compress%2Cformat&fit=max&h=160&q=80"
+                    alt="Square with grey-blue border. Text reads 'Platinum Transparency 2023 - Candid.'"
+                    loading="lazy">
+
+                <img class="h-20 w-auto"
+                    src="https://npf-prod.imgix.net/uploads/charity-nav-logo.png?auto=compress%2Cformat&fit=max&h=160&q=80"
+                    alt="NPF is a Charity Navigator" loading="lazy">
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
