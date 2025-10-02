@@ -1,3 +1,7 @@
+// Créez une base de données “utilisateurs” contenant une table “utilisateurs” et ayant
+// comme champs “id”, “nom”, “prenom” et “email”.
+// Ajoutez des utilisateurs directement dans phpmyadmin.
+
 // Fonction asynchrone pour récupérer les utilisateurs et remplir le tableau
 async function loadUsers() {
     try {
@@ -7,6 +11,7 @@ async function loadUsers() {
         const tbody = document.querySelector('#usersTable tbody');
         tbody.innerHTML = ''; // Vide le tableau avant de remplir
 
+        // Parcourt chaque utilisateur du tableau récupéré
         users.forEach(function (user) {
             const row = document.createElement('tr');
             row.innerHTML = `

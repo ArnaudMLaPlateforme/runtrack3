@@ -1,3 +1,8 @@
+// Téléchargez le fichier suivant : pokemon.json
+// Créez un formulaire permettant de trier ces données.
+// Il doit contenir les champs suivants :
+
+
 // Fonction asynchrone qui récupère le JSON, filtre les Pokémon et affiche les résultats
 async function filterPokemons() {
   // Récupération des valeurs saisies par l'utilisateur dans le formulaire

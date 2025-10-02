@@ -1,66 +1,36 @@
+// Konami
+
+// Définition du "Konami Code" simplifié (flèche haut deux fois)
 const konamiCode = [
-  "arrowup", "arrowup", "arrowdown", "arrowdown",
-  "arrowleft", "arrowright", "arrowleft", "arrowright",
-  "b", "a"
+  "arrowup", "arrowup"
 ];
+
+// Variable pour suivre la position actuelle dans le code
 let position = 0;
 
+// Fonction qui vérifie si la touche pressée correspond à la prochaine touche du code
 function checkKonamiCode(event) {
+  // On compare la touche pressée (en minuscules) avec la touche attendue
   if (event.key.toLowerCase() === konamiCode[position]) {
+    // La touche est correcte, on passe à la suivante
     position++;
+    
+    // Si on a atteint la fin du code, on active la page secrète
     if (position === konamiCode.length) {
-      activateSecretPage();
-      position = 0;
+      activateSecretPage(); // Affiche la page secrète
+      position = 0; // Réinitialise la position pour permettre un nouveau code
     }
   } else {
+    // Touche incorrecte, on réinitialise la position
     position = 0;
   }
 }
 
+// Fonction qui affiche la page secrète et cache la page principale
 function activateSecretPage() {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("secretPage").style.display = "block";
+  document.getElementById("home").style.display = "none"; // Masque la page principale
+  document.getElementById("secretPage").style.display = "block"; // Affiche la page secrète
 }
 
+// Écouteur d'événement sur tout le document pour détecter les touches pressées
 window.addEventListener("keydown", checkKonamiCode);
-
-
-
-
-
-
-// // Code Konami : ↑ ↑ ↓ ↓ ← → ← → B A
-// const konamiCode = [
-//   "arrowup", "arrowup", "arrowdown", "arrowdown",
-//   "arrowleft", "arrowright", "arrowleft", "arrowright",
-//   "b", "a"
-// ];
-// let position = 0;
-
-// // Fonction de vérification du code Konami
-// function checkKonamiCode(event) {
-
-//   /* Si la touche pressée (event.keyCode) correspond à la position du code Konami, on avance la position 
-//   pour vérifier la prochaine touche */
-//   if (event.key === konamiCode[position]) {
-//     position++;
-
-//     /* Si la position atteint la longueur de la séquence, 
-//     cela signifie que toute la séquence a été tapée correctement */
-//     if (position === konamiCode.length) {
-//       activateSecretPage();
-//       position = 0;
-//     }
-//   } else {
-//     position = 0;
-//   }
-// }
-
-// // Fonction à exécuter si le code Konami est détecté
-// function activateSecretPage() {
-//   document.getElementById("home").style.display = "none";
-//   document.getElementById("secretPage").style.display = "block";
-// }
-
-// // Écouteur de touches clavier
-// window.addEventListener("keydown", checkKonamiCode);

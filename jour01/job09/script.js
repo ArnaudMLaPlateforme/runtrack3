@@ -1,5 +1,7 @@
 function tri (numbers, order){
-    if (order === "asc") { // Tri croissant
+    // Vérifie si l'ordre demandé est "asc" (ascendant / croissant)
+    if (order === "asc") { 
+        // Utilisation de la méthode sort() avec une fonction de comparaison pour trier du plus petit au plus grand
         numbers.sort(function(a,b){
             return a-b;
         })
